@@ -1,4 +1,4 @@
-# my python webcam security system
+# opencv python webcam facial recognition system
 
 so i made this python project that turns my webcam into a home security camera. it uses machine learning to figure out who is standing in front of it, takes pictures of strangers, makes my mac make noise, and streams the video to a website so i can watch it from my phone.
 
