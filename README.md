@@ -1,25 +1,22 @@
-# OpenCV Real-Time Facial Recognition and Security Dashboard
+# my python webcam security system
 
-A computer vision and security system built using Python, OpenCV, Machine Learning (LBPH), and Flask. The system performs real-time face detection and recognition, triggers automated intrusion alerts with desktop notifications, and streams live feeds to a local web dashboard.
+so i made this python project that turns my webcam into a home security camera. it uses machine learning to figure out who is standing in front of it, takes pictures of strangers, makes my mac make noise, and streams the video to a website so i can watch it from my phone.
 
-## Features
+## features
 
-* **Face Detection**: Identifies human faces in live webcam streams using OpenCV Haar Cascades.
-* **Facial Recognition**: Matches identities against trained face datasets using the Local Binary Patterns Histograms (LBPH) algorithm.
-* **Intrusion Monitoring**: Enforces cooldown periods, captures timestamped snapshots of unrecognized individuals, and issues native macOS desktop notifications.
-* **Web Dashboard**: Broadcasts an MJPEG video stream via a Flask backend server to a responsive HTML5 interface.
+* **face detection & recognition**: uses openCV to spot faces and actually figure out if it's me or someone else. green box means friend, red box means stranger.
+* **spy camera mode**: if an unknown person shows up, it waits a few seconds so it doesn't spam, takes a picture of them, saves it in a folder, and sends a notification to my mac.
+* **web dashboard**: built a simple flask website so i can open up my browser and stream the live camera feed anywhere in the house.
 
-## File Structure
+## files in this folder
 
-* `app.py`: Flask backend server and streaming interface.
-* `collect_data.py`: Gathers and normalizes training image samples from the webcam.
-* `train_model.py`: Trains the LBPH recognition model and serializes output weights.
-* `recognize_face.py`: Real-time identification script with confidence thresholding.
-* `security_alert.py`: Security monitor for intrusion logging and system notifications.
-* `templates/index.html`: Frontend dashboard interface.
+* `app.py`: runs the flask website server and streams the video.
+* `collect_data.py`: takes like 30 pictures of your face so the computer learns what you look like.
+* `train_model.py`: trains the ai model using all those pictures.
+* `recognize_face.py`: the script that watches the webcam and labels who is there.
+* `security_alert.py`: takes secret screenshots when it sees someone it doesn't recognize.
+* `templates/index.html`: the html page for the web stream.
 
-## Technology Stack
+## how to run
 
-* **Language**: Python
-* **Libraries**: OpenCV (`cv2`), NumPy, Flask
-* **Platform**: macOS
+make sure you have python, install openCV and flask in a virtual environment, and run python3 app.py.
